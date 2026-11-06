@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GlobalMart — 国际商品贸易平台 | Worldwide B2B & B2C Marketplace</title>
+  <meta name="description" content="GlobalMart 是一个面向国际往来的商品贸易平台，提供跨境批发与零售、全球物流与多币种结算服务。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ 顶部工具条 ============ -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span class="ship-to" id="shipTo">📦 配送至 <strong>全球 Global</strong></span>
+      </div>
+      <div class="topbar-right">
+        <button class="lang-btn" id="langBtn" aria-label="切换语言">🌐 <span data-i18n="language">语言</span>: <strong id="langLabel">中文</strong></button>
+        <div class="currency-select">
+          <label for="currency" class="sr-only">货币</label>
+          <select id="currency" aria-label="选择货币">
+            <option value="USD" data-symbol="$">$ USD</option>
+            <option value="CNY" data-symbol="¥">¥ CNY</option>
+            <option value="EUR" data-symbol="€">€ EUR</option>
+            <option value="GBP" data-symbol="£">£ GBP</option>
+            <option value="JPY" data-symbol="¥">¥ JPY</option>
+          </select>
+        </div>
+        <a href="#" class="topbar-link" data-i18n="help">帮助</a>
+        <a href="#" class="topbar-link" data-i18n="sell">开店入驻</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 主头部 ============ -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="GlobalMart 首页">
+        <span class="logo-mark">G<span class="logo-dot">●</span></span>
+        <span class="logo-text">GlobalMart</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单">☰</button>
+
+      <form class="search" role="search" onsubmit="return false;">
+        <select class="search-cat" aria-label="搜索分类">
+          <option>全部商品</option>
+          <option>电子数码</option>
+          <option>服装纺织</option>
+          <option>机械工业</option>
+          <option>家居园艺</option>
+          <option>美妆个护</option>
+        </select>
+        <input type="search" class="search-input" id="searchInput" placeholder="搜索数百万跨境商品…" data-i18n-ph="searchPh" />
+        <button class="search-btn" aria-label="搜索">🔍</button>
+      </form>
+
+      <nav class="header-actions">
+        <a href="account.html" class="ha-item">
+          <span class="ha-icon">👤</span>
+          <span class="ha-text"><small data-i18n="hello">您好</small><br /><strong data-i18n="account">账户 / 登录</strong></span>
+        </a>
+        <a href="#" class="ha-item">
+          <span class="ha-icon">📋</span>
+          <span class="ha-text"><small data-i18n="ordersSmall">查看</small><br /><strong data-i18n="orders">我的订单</strong></span>
+        </a>
+        <a href="#" class="ha-item cart" id="cartBtn">
+          <span class="ha-icon">🛒<span class="cart-count" id="cartCount">0</span></span>
+          <span class="ha-text"><strong data-i18n="cart">购物车</strong></span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- 分类导航 -->
+    <nav class="dept-nav" id="deptNav">
+      <div class="container dept-inner">
+        <a href="#" data-i18n="deals">今日特惠</a>
+        <a href="#">电子数码 Electronics</a>
+        <a href="#">服装纺织 Apparel</a>
+        <a href="#">机械工业 Machinery</a>
+        <a href="#">家居园艺 Home</a>
+        <a href="#">美妆个护 Beauty</a>
+        <a href="#">食品生鲜 Grocery</a>
+        <a href="#" data-i18n="wholesale">批发采购</a>
+        <a href="#" data-i18n="global">全球馆</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============ 主视觉轮播 ============ -->
+  <section class="hero">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active" style="background:linear-gradient(120deg,#0b1f3a,#1d4ed8);">
+        <div class="hero-content">
+          <p class="hero-eyebrow">GLOBAL TRADE · 跨境贸易</p>
+          <h1 data-i18n="hero1Title">连接全球供应商与买家</h1>
+          <p data-i18n="hero1Sub">百万级 SKU，直连工厂与品牌，一站式全球采购。</p>
+          <a href="#products" class="hero-cta" data-i18n="shopNow">立即选购 →</a>
+        </div>
+      </div>
+      <div class="hero-slide" style="background:linear-gradient(120deg,#7c2d12,#f59e0b);">
+        <div class="hero-content">
+          <p class="hero-eyebrow">WHOLESALE · 批发专享</p>
+          <h1 data-i18n="hero2Title">批量采购，更低单价</h1>
+          <p data-i18n="hero2Sub">注册企业账户，解锁阶梯报价与专属客户经理。</p>
+          <a href="#" class="hero-cta" data-i18n="learnMore">了解批发 →</a>
+        </div>
+      </div>
+      <div class="hero-slide" style="background:linear-gradient(120deg,#064e3b,#10b981);">
+        <div class="hero-content">
+          <p class="hero-eyebrow">WORLDWIDE SHIPPING · 全球物流</p>
+          <h1 data-i18n="hero3Title">200+ 国家与地区送达</h1>
+          <p data-i18n="hero3Sub">清关、税费预估与全程追踪，跨境更省心。</p>
+          <a href="#" class="hero-cta" data-i18n="trackShip">查询物流 →</a>
+        </div>
+      </div>
+    </div>
+    <button class="hero-arrow prev" id="heroPrev" aria-label="上一张">‹</button>
+    <button class="hero-arrow next" id="heroNext" aria-label="下一张">›</button>
+    <div class="hero-dots" id="heroDots"></div>
+  </section>
+
+  <!-- ============ 热门搜索 ============ -->
+  <div class="trend-bar container">
+    <span class="trend-label" data-i18n="trend">热门：</span>
+    <a href="#">无线耳机</a><a href="#">智能手表</a><a href="#">太阳能灯</a><a href="#">办公椅</a><a href="#">有机绿茶</a><a href="#">快充充电器</a>
+  </div>
+
+  <!-- ============ 快捷分类 ============ -->
+  <section class="container section" id="catTiles">
+    <div class="section-head">
+      <h2 data-i18n="catTitle">🛍️ 按分类选购</h2>
+      <a href="#" class="see-all" data-i18n="seeAll">查看全部 ›</a>
+    </div>
+    <div class="cat-grid">
+      <a class="cat-tile" href="#"><span class="cat-emoji">📱</span><span data-i18n="cElec">电子数码</span></a>
+      <a class="cat-tile" href="#"><span class="cat-emoji">👕</span><span data-i18n="cApp">服装纺织</span></a>
+      <a class="cat-tile" href="#"><span class="cat-emoji">⚙️</span><span data-i18n="cMach">机械工业</span></a>
+      <a class="cat-tile" href="#"><span class="cat-emoji">🏠</span><span data-i18n="cHome">家居园艺</span></a>
+      <a class="cat-tile" href="#"><span class="cat-emoji">💄</span><span data-i18n="cBeauty">美妆个护</span></a>
+      <a class="cat-tile" href="#"><span class="cat-emoji">🍱</span><span data-i18n="cFood">食品生鲜</span></a>
+      <a class="cat-tile" href="#"><span class="cat-emoji">🚗</span><span data-i18n="cAuto">汽配零件</span></a>
+      <a class="cat-tile" href="#"><span class="cat-emoji">🎁</span><span data-i18n="cMore">更多分类</span></a>
+    </div>
+  </section>
+
+  <!-- ============ 今日特惠 ============ -->
+  <section class="container section">
+    <div class="section-head">
+      <h2 data-i18n="dealTitle">⚡ 今日特惠</h2>
+      <a href="#" class="see-all" data-i18n="seeAll">查看全部 ›</a>
+    </div>
+    <div class="deal-banner">
+      <div class="deal-info">
+        <p class="deal-tag" data-i18n="limited">限时秒杀</p>
+        <h3 data-i18n="dealH">精选爆款 低至 5 折</h3>
+        <p data-i18n="dealP">每日更新，先到先得。支持多币种结算与全球配送。</p>
+        <a href="#products" class="deal-btn" data-i18n="grab">抢购 →</a>
+      </div>
+      <div class="deal-timer" id="dealTimer">
+        <span>02</span>:<span>14</span>:<span>36</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 精选商品 ============ -->
+  <section class="container section" id="products">
+    <div class="section-head">
+      <h2 data-i18n="featTitle">🔥 精选商品</h2>
+      <a href="#" class="see-all" data-i18n="seeAll">查看全部 ›</a>
+    </div>
+    <div class="product-grid" id="productGrid"><!-- JS 渲染 --></div>
+  </section>
+
+  <!-- ============ 信任徽章 ============ -->
+  <section class="trust">
+    <div class="container trust-grid">
+      <div class="trust-item"><span class="trust-ico">🌍</span><div><strong data-i18n="t1">全球配送</strong><small data-i18n="t1s">覆盖 200+ 国家与地区</small></div></div>
+      <div class="trust-item"><span class="trust-ico">🔒</span><div><strong data-i18n="t2">安全支付</strong><small data-i18n="t2s">多币种 · 加密结算</small></div></div>
+      <div class="trust-item"><span class="trust-ico">↩️</span><div><strong data-i18n="t3">无忧退换</strong><small data-i18n="t3s">30 天跨境退换保障</small></div></div>
+      <div class="trust-item"><span class="trust-ico">💬</span><div><strong data-i18n="t4">7×24 支持</strong><small data-i18n="t4s">多语言客服团队</small></div></div>
+    </div>
+  </section>
+
+  <!-- ============ 页脚 ============ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4 data-i18n="fGet">购物指南</h4>
+        <a href="#">如何下单</a><a href="#">支付方式</a><a href="#">物流追踪</a><a href="#">退换政策</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="fSell">商家服务</h4>
+        <a href="#">开店入驻</a><a href="#">批发采购</a><a href="#">跨境物流</a><a href="#">营销中心</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="fAbout">关于我们</h4>
+        <a href="#">公司简介</a><a href="#">新闻中心</a><a href="#">招贤纳士</a><a href="#">联系我们</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="fRegion">选择地区</h4>
+        <a href="#">🌐 中国大陆</a><a href="#">🇺🇸 United States</a><a href="#">🇪🇺 Europe</a><a href="#">🇯🇵 日本</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-logo">GlobalMart</span>
+      <p data-i18n="copy">© 2026 GlobalMart International Trading Co. 跨境商品贸易平台 · 仅供演示</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
